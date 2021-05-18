@@ -1,16 +1,29 @@
 package operators;
 
+/**
+ * Clase Pinball
+ * 
+ * @autor Juan Manuel Jimenez Alfaro
+ */
 public class Pinball {
 
-	public Pinball() {
-
-	}
-
+	/**
+	 * 
+	 * Metodo que genera una puntacion
+	 * 
+	 */
 	public void launchBall() {
+		
+		/** Variable bola que genera un numero aleatorio */
 		int ball = (int) (Math.random() * 9 + 1);
+		
+		/** Variables donde guardamos la puntuacion y si tiene premio o no */
 		String score = null, reward;
+		
+		/** Variable donde almacenamos los creditos obtenidos */
 		int credits = 0;
 
+		// asignamos la puntuacion segun en mumero obtenido
 		if (ball <= 3) {
 			System.out.println("Tu puntuacion ha sido muy baja " + ball);
 			score = "bajo";
@@ -22,8 +35,10 @@ public class Pinball {
 			score = "alto";
 		}
 
+		// comprobamos si tiene premio o no segun la puntuacion
 		reward = (score.equals("medio") || score.equals("alto")) ? "si" : "no";
 
+		// segun su puntuacion le asignamos los creditos
 		switch (score) {
 
 		case "bajo":
@@ -53,6 +68,7 @@ public class Pinball {
 			break;
 		}
 
+		// si tiene premio se lo anunciamos por pantalla
 		if (reward.equals("si"))
 			System.out.println("Y has conseguido un premio");
 		else
