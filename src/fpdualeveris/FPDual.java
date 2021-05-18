@@ -12,7 +12,10 @@ public class FPDual {
 	private static void operatorChallenge() {
 	
 		Pinball p = new Pinball();
-		p.launchBall();
+		
+		if (p instanceof Pinball)
+			p.launchBall();
+		
 	}
 
 }
