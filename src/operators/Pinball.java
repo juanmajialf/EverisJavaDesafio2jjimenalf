@@ -23,7 +23,7 @@ public class Pinball {
 		/** Variable donde almacenamos los creditos obtenidos */
 		int credits = 0;
 
-		// asignamos la puntuacion segun en mumero obtenido
+		// asignacion de la puntuacion segun el numero obtenido
 		if (ball <= 3) {
 			System.out.println("Tu puntuacion ha sido muy baja " + ball);
 			score = "bajo";
@@ -35,10 +35,15 @@ public class Pinball {
 			score = "alto";
 		}
 
-		// comprobamos si tiene premio o no segun la puntuacion
+		// comprobacion si tiene premio o no segun la puntuacion
 		reward = (score.equals("medio") || score.equals("alto")) ? "si" : "no";
-
-		// segun su puntuacion le asignamos los creditos
+		
+		if (reward.equals("si"))
+			System.out.println("Has conseguido un premio");
+		else
+			System.out.println("No has conseguido premio");
+		
+		// segun su puntuacion se le asigna los creditos y se le suma un plus por ella
 		switch (score) {
 
 		case "bajo":
@@ -68,11 +73,7 @@ public class Pinball {
 			break;
 		}
 
-		// si tiene premio se lo anunciamos por pantalla
-		if (reward.equals("si"))
-			System.out.println("Y has conseguido un premio");
-		else
-			System.out.println("No has conseguido premio");
+		
 	}
 
 }
