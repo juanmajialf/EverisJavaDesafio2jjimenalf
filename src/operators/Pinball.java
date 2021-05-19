@@ -13,14 +13,14 @@ public class Pinball {
 	 * 
 	 */
 	public void launchBall() {
-		
+
 		/** Variable bola que genera un numero aleatorio */
 		int ball = (int) (Math.random() * 9 + 1);
-		
-		/** Variables donde guardamos la puntuacion y si tiene premio o no */
+
+		/** Variables donde se guarda la puntuacion y si tiene premio o no */
 		String score = null, reward;
-		
-		/** Variable donde almacenamos los creditos obtenidos */
+
+		/** Variable donde se almacena los creditos obtenidos */
 		int credits = 0;
 
 		// asignacion de la puntuacion segun el numero obtenido
@@ -37,12 +37,12 @@ public class Pinball {
 
 		// comprobacion si tiene premio o no segun la puntuacion
 		reward = (score.equals("medio") || score.equals("alto")) ? "si" : "no";
-		
+
 		if (reward.equals("si"))
 			System.out.println("Has conseguido un premio");
 		else
 			System.out.println("No has conseguido premio");
-		
+
 		// segun su puntuacion se le asigna los creditos y se le suma un plus por ella
 		switch (score) {
 
@@ -73,7 +73,6 @@ public class Pinball {
 			break;
 		}
 
-		
 	}
 
 }
